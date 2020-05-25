@@ -1,0 +1,543 @@
+@font-face {
+  font-family: 'caviar dreams bold';
+  src: url("fonts/bold/Caviar_Dreams_Bold-webfont.eot");
+  src: url("fonts/bold/Caviar_Dreams_Bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/bold/Caviar_Dreams_Bold-webfont.woff2") format("woff2"), url("fonts/bold/Caviar_Dreams_Bold-webfont.woff") format("woff"), url("fonts/bold/Caviar_Dreams_Bold-webfont.ttf") format("truetype"), url("fonts/bold/Caviar_Dreams_Bold-webfont.svg#caviar_dreamsbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'caviar dreams regular';
+  src: url("fonts/regular/CaviarDreams-webfont.eot");
+  src: url("fonts/regular/CaviarDreams-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/regular/CaviarDreams-webfont.woff2") format("woff2"), url("fonts/regular/CaviarDreams-webfont.woff") format("woff"), url("fonts/regular/CaviarDreams-webfont.ttf") format("truetype"), url("fonts/regular/CaviarDreams-webfont.svg#caviar_dreamsregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'caviar dreams regular', sans-serif;
+  background: #d3d3d3;
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: ". . ." ". c ." ". . .";
+}
+
+.box {
+  width: 80vw;
+  height: 80vw;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: c;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 4fr;
+  -ms-grid-columns: 1fr 1fr 4fr;
+      grid-template: 1fr 1fr 4fr / 1fr 1fr 4fr;
+}
+
+.box .avatar {
+  border: 0.5em solid #165662;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+  z-index: 1;
+}
+
+.box .avatar img {
+  width: 100%;
+}
+
+.box .info {
+  border: 0.2em solid #165662;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / 4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: ". w a" "e e a" "e e a" "s s a";
+}
+
+.box .info .white {
+  height: 8em;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: w;
+}
+
+.box .info .white h1 {
+  font-family: 'caviar dreams bold';
+  font-size: 2em;
+  margin: 20px;
+}
+
+.box .info .white p {
+  font-size: 2em;
+  margin: 20px;
+}
+
+.box .info .about {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 3;
+  grid-area: a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-left: 3px solid #165662;
+}
+
+.box .info .about p {
+  margin: 0px 5px;
+}
+
+.box .info .about h3 {
+  font-family: 'caviar dreams bold';
+  text-align: center;
+  margin: 50px 0;
+}
+
+.box .info .about ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.box .info .about ul li h4 {
+  font-family: 'caviar dreams bold';
+  margin: 20px 5px;
+}
+
+.box .info .about ul li p {
+  margin: 10px 2px;
+}
+
+.box .info .experience {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box .info .experience li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2em 1em;
+}
+
+.box .info .experience li:first-child {
+  font-family: 'caviar dreams bold';
+  position: relative;
+}
+
+.box .info .experience li:first-child h2 {
+  position: absolute;
+  left: 45%;
+}
+
+.box .info .experience li h3, .box .info .experience p {
+  margin: 0.5em;
+}
+
+.box .info .experience li h3 {
+  font-family: 'caviar dreams bold';
+  background-color: #d6d6d6;
+  padding: 10px;
+  border: none;
+  border-radius: 40px;
+}
+
+.box .info .experience li:hover h3 {
+  font-family: 'caviar dreams bold';
+  background-color: yellow;
+  padding: 10px;
+  border: none;
+  border-radius: 40px;
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
+.box .info .experience li p {
+  position: relative;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.box .info .experience li p span {
+  display: block;
+  background: #999;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.box .info .experience li p span:nth-child(1) {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+}
+
+.box .info .experience li p span:nth-child(2) {
+  position: absolute;
+  height: 100%;
+  width: 2px;
+}
+
+.box .info .experience li p span:nth-child(1) {
+  top: 0;
+  right: -100%;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.box .info .experience li p span:nth-child(2) {
+  top: -100%;
+  left: 0;
+}
+
+.box .info .experience li:hover p span:nth-child(1) {
+  top: 0;
+  right: 0;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.box .info .experience li:hover p span:nth-child(2) {
+  top: 0;
+  left: 0;
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.box .info .skills {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: s;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+.box .info .skills .text {
+  margin: 1em;
+}
+
+.box .info .skills .text h3, .box .info .skills li {
+  padding: 0.5em;
+  text-transform: uppercase;
+}
+
+.box .info .skills .text h3 {
+  margin-bottom: 1em;
+  text-align: center;
+  font-family: 'caviar dreams bold';
+  grid-area: b;
+}
+
+.box .info .skills .text a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+.box .info .skills .prof ul li {
+  position: relative;
+}
+
+.box .info .skills .prof ul li::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 150px;
+  width: 50%;
+  height: 15px;
+  background-color: #999;
+  border-radius: 100px;
+}
+
+.box .info .skills .prof ul li::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 150px;
+  width: 50%;
+  height: 15px;
+  background-color: blue;
+  border-radius: 100px;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.box .info .skills .prof ul li.first:hover::after {
+  -webkit-animation-name: first;
+          animation-name: first;
+}
+
+.box .info .skills .prof ul li.second:hover::after {
+  -webkit-animation-name: second;
+          animation-name: second;
+}
+
+.box .info .skills .prof ul li.third:hover::after {
+  -webkit-animation-name: third;
+          animation-name: third;
+}
+
+.box .info .skills .prof ul li.fourth:hover::after {
+  -webkit-animation-name: fourth;
+          animation-name: fourth;
+}
+
+@-webkit-keyframes first {
+  100% {
+    width: 40%;
+  }
+}
+
+@keyframes first {
+  100% {
+    width: 40%;
+  }
+}
+
+@-webkit-keyframes second {
+  100% {
+    width: 30%;
+  }
+}
+
+@keyframes second {
+  100% {
+    width: 30%;
+  }
+}
+
+@-webkit-keyframes third {
+  100% {
+    width: 40%;
+  }
+}
+
+@keyframes third {
+  100% {
+    width: 40%;
+  }
+}
+
+@-webkit-keyframes fourth {
+  100% {
+    width: 30%;
+  }
+}
+
+@keyframes fourth {
+  100% {
+    width: 30%;
+  }
+}
+
+.box .info .skills .pers ul li {
+  position: relative;
+}
+
+.box .info .skills .pers ul li::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 150px;
+  width: 50%;
+  height: 15px;
+  background-color: #999;
+  border-radius: 100px;
+}
+
+.box .info .skills .pers ul li::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 150px;
+  width: 50%;
+  height: 15px;
+  background-color: blue;
+  border-radius: 100px;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.box .info .skills .pers ul li.first:hover::after {
+  -webkit-animation-name: first;
+          animation-name: first;
+}
+
+.box .info .skills .pers ul li.second:hover::after {
+  -webkit-animation-name: second;
+          animation-name: second;
+}
+
+.box .info .skills .pers ul li.third:hover::after {
+  -webkit-animation-name: third;
+          animation-name: third;
+}
+
+.box .info .skills .pers ul li.fourth:hover::after {
+  -webkit-animation-name: fourth;
+          animation-name: fourth;
+}
+
+@keyframes first {
+  100% {
+    width: 30%;
+  }
+}
+
+@keyframes second {
+  100% {
+    width: 40%;
+  }
+}
+
+@keyframes third {
+  100% {
+    width: 30%;
+  }
+}
+
+@keyframes fourth {
+  100% {
+    width: 40%;
+  }
+}
+
+.box .info .skills .lang ul li {
+  position: relative;
+}
+
+.box .info .skills .lang ul li::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 150px;
+  width: 50%;
+  height: 15px;
+  background-color: #999;
+  border-radius: 100px;
+}
+
+.box .info .skills .lang ul li::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 150px;
+  width: 50%;
+  height: 15px;
+  background-color: blue;
+  border-radius: 100px;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.box .info .skills .lang ul li.engl:hover::after {
+  -webkit-animation-name: engl;
+          animation-name: engl;
+}
+
+.box .info .skills .lang ul li.rus:hover::after {
+  -webkit-animation-name: rus;
+          animation-name: rus;
+}
+
+.box .info .skills .lang ul li.ro:hover::after {
+  -webkit-animation-name: ro;
+          animation-name: ro;
+}
+
+@-webkit-keyframes engl {
+  100% {
+    width: 40%;
+  }
+}
+
+@keyframes engl {
+  100% {
+    width: 40%;
+  }
+}
+
+@-webkit-keyframes rus {
+  100% {
+    width: 49%;
+  }
+}
+
+@keyframes rus {
+  100% {
+    width: 49%;
+  }
+}
+
+@-webkit-keyframes ro {
+  100% {
+    width: 49%;
+  }
+}
+
+@keyframes ro {
+  100% {
+    width: 49%;
+  }
+}
+
+.box .info .skills .contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.box .info .skills .contacts a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=style.css.map */

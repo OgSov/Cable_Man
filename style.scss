@@ -1,0 +1,378 @@
+@import 'fonts';
+
+$color1: #1C2A2D;
+$color2: #165662;
+$color3: #387487;
+$color4: #9AC1C6;
+$color5: #DFE2E3;
+
+$size: 80vw;
+
+body{
+    font-family: 'caviar dreams regular', sans-serif;
+    background: #d3d3d3;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+        ". . ."
+        ". c ."
+        ". . .";
+}
+
+
+
+.box{
+    width: $size;
+    height: $size;
+    grid-area: c;
+
+    display: grid;
+    grid-template: 1fr 1fr 4fr / 1fr 1fr 4fr;
+
+    .avatar{
+        border: 0.5em solid $color2;
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+        z-index: 1;
+        img{
+            width: 100%;
+        }
+    
+    }
+    .info{
+        border: 0.2em solid $color2;
+        grid-column: 2 / 4;
+        grid-row: 2 / 4;
+        display: grid;
+        grid-template-areas: 
+                ". w a"
+                "e e a"
+                "e e a"
+                "s s a";
+        .white{
+            height: 8em;
+            grid-area: w;
+            h1{
+                font-family: 'caviar dreams bold';
+                font-size: 2em;
+                margin: 20px;
+            }
+            p{
+                font-size: 2em;
+                margin: 20px;
+            }
+        }
+        .about{
+            grid-area: a;
+            display: flex;
+            flex-direction: column;
+            // justify-content: space-around;
+            border-left: 3px solid $color2;
+            p{
+                margin: 0px 5px;
+            }
+            h3{
+                font-family: 'caviar dreams bold';
+                text-align: center;
+                margin: 50px 0;
+            }
+            ul li{
+                display: flex;
+                h4{
+                    font-family: 'caviar dreams bold';
+                    margin: 20px 5px;
+                }
+                p{
+                    margin: 10px 2px;
+                }
+            }
+        }
+        .experience{
+            grid-area: e;
+            display: flex;
+            align-items: center;
+            
+            li{
+                display: flex;
+                margin: 2em 1em;
+            }
+            li:first-child{
+                font-family: 'caviar dreams bold';
+                position: relative;
+            }
+            li:first-child h2{
+                position: absolute;
+                left: 45%;
+            }
+            li h3, p{
+                margin: 0.5em;
+            }
+            li h3{
+                font-family: 'caviar dreams bold';
+                background-color: #d6d6d6;
+                padding: 10px;
+                border: none;
+                border-radius: 40px;
+            }
+            li:hover h3{
+                font-family: 'caviar dreams bold';
+                background-color: yellow;
+                padding: 10px;
+                border: none;
+                border-radius: 40px;
+                transition-delay: 0.8s;
+            }
+            li p{
+                position: relative;
+                overflow: hidden;
+                padding: 5px;
+            }
+            li p span{
+                display: block;
+                background: #999;
+                transition: 0.2s;
+            }
+            li p span:nth-child(1){
+                position: absolute;
+                height: 2px;
+                width: 100%;
+            }
+            li p span:nth-child(2){
+                position: absolute;
+                height: 100%;
+                width: 2px;
+            }
+            li p span:nth-child(1){
+                top: 0;
+                right: -100%;
+                transition-delay: 0.2s;
+            }
+            li p span:nth-child(2){
+                top: -100%;
+                left: 0;
+            }
+            li:hover p span:nth-child(1){
+                top: 0;
+                right: 0;
+                transition-delay: 0.2s;
+            }
+            li:hover p span:nth-child(2){
+                top: 0;
+                left: 0;
+                transition-delay: 0.4s;
+            }
+            
+            
+        }
+        .skills{
+            grid-area: s;
+            display: grid;
+            grid-template: 1fr 1fr / 1fr 1fr;
+            .text{
+                margin: 1em;
+            }
+            .text h3, li{
+                padding: 0.5em;
+                text-transform: uppercase;
+            }
+            .text h3{
+                margin-bottom: 1em;
+                text-align: center;
+                font-family: 'caviar dreams bold';
+                grid-area: b;
+            }
+            .text a{
+                text-decoration: none;
+                margin: 0;
+                padding: 0;
+                color: black;
+            }
+        // -----PROF SKILL------------------------ 
+            .prof ul li{
+                position: relative;
+            }
+            .prof ul li::before{
+                content: "";
+                position: absolute;
+                top: 5px;
+                left: 150px;
+                width: 50%;
+                height: 15px;
+                background-color: #999;
+                border-radius: 100px;
+            }
+            .prof ul li::after{
+                content: "";
+                position: absolute;
+                top: 5px;
+                left: 150px;
+                width: 50%;
+                height: 15px;
+                background-color: blue;
+                border-radius: 100px;
+                animation-duration: 0.7s;
+                animation-timing-function: ease;
+                animation-fill-mode: forwards;
+            }
+            .prof ul li.first:hover::after{
+                animation-name: first;
+            }
+            .prof ul li.second:hover::after{
+                animation-name: second;
+            }
+            .prof ul li.third:hover::after{
+                animation-name: third;
+            }
+            .prof ul li.fourth:hover::after{
+                animation-name: fourth;
+            }
+            @keyframes first{
+                100%{
+                    width: 40%;
+                }
+            }
+            @keyframes second{
+                100%{
+                    width: 30%;
+                }
+            }
+            @keyframes third{
+                100%{
+                    width: 40%;
+                }
+            }
+            @keyframes fourth{
+                100%{
+                    width: 30%;
+                }
+            }
+
+            
+        // --------------------------PERSONAL SKILLS------------
+        .pers ul li{
+            position: relative;
+        }
+        .pers ul li::before{
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 150px;
+            width: 50%;
+            height: 15px;
+            background-color: #999;
+            border-radius: 100px;
+        }
+        .pers ul li::after{
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 150px;
+            width: 50%;
+            height: 15px;
+            background-color: blue;
+            border-radius: 100px;
+            animation-duration: 0.7s;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+        }
+        .pers ul li.first:hover::after{
+            animation-name: first;
+        }
+        .pers ul li.second:hover::after{
+            animation-name: second;
+        }
+        .pers ul li.third:hover::after{
+            animation-name: third;
+        }
+        .pers ul li.fourth:hover::after{
+            animation-name: fourth;
+        }
+        @keyframes first{
+            100%{
+                width: 30%;
+            }
+        }
+        @keyframes second{
+            100%{
+                width: 40%;
+            }
+        }
+        @keyframes third{
+            100%{
+                width: 30%;
+            }
+        }
+        @keyframes fourth{
+            100%{
+                width: 40%;
+            }
+        }
+
+        // -------LANG SKILLS------------
+        .lang ul li{
+            position: relative;
+        }
+        .lang ul li::before{
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 150px;
+            width: 50%;
+            height: 15px;
+            background-color: #999;
+            border-radius: 100px;
+        }
+        .lang ul li::after{
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 150px;
+            width: 50%;
+            height: 15px;
+            background-color: blue;
+            border-radius: 100px;
+            animation-duration: 0.7s;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+        }
+        .lang ul li.engl:hover::after{
+            animation-name: engl;
+        }
+        .lang ul li.rus:hover::after{
+            animation-name: rus;
+        }
+        .lang ul li.ro:hover::after{
+            animation-name: ro;
+        }
+        
+        @keyframes engl{
+            100%{
+                width: 40%;
+            }
+        }
+        @keyframes rus{
+            100%{
+                width: 49%;
+            }
+        }
+        @keyframes ro{
+            100%{
+                width: 49%;
+            }
+        }
+        // -------------------CONTACTS---------
+        .contacts{
+            display: flex;
+            flex-direction: column;
+        }
+        .contacts a{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+            
+        }
+    }
+}
